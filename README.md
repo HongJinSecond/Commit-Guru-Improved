@@ -8,7 +8,7 @@ Ingests and analyzes code repositories.
 
 ==> This implementation is a modification of the original Commit.Guru code to enable processing git repositories with commit messages in Chinese and to collect information about the timestamp when the defects linked to software changes were fixed.
 
-##Installation
+## Installation
 1. Clone this repository in to an empty directory
 2. Copy the `./config.example.json` to `./config.json` and change the
 the configurations. All fields are required.
@@ -19,7 +19,8 @@ gmail: gmail account to be used to send cas notifications
 repoUpdates: how often repositories should be updated for new commits
 system: how many worker threads the cas system can use to analyze and ingest repos.
 
-###Dependencies
+### Dependencies
+make share you are running in **Linux**
 Additional Instructions are available in SETUP.md
 * Python  >= 3.3 and <= 3.6
 * Pip for Python Version > 3.3 and < 3.6
@@ -90,7 +91,7 @@ source /path/to/new/virtual/environemnt/bin/activate
 
 Type `deactiviate` to exit the virtual env -->
 
-###Installing rpy2
+### Installing rpy2
 <!-- * Assumes you are working on Ubuntu 12.04 and python 3.3
 
 Getting rpy2 to work can be a bit tricky. First, make sure R is installed. To do this, first
@@ -116,7 +117,7 @@ get the repository SSL key and import it to apt by doing
 pip install rpy2
 ```
 
-###Additional Pip Packages
+### Additional Pip Packages
 Install the following packages by doing `pip install `  and then the package
 name. Make sure you are using python3, such as using a virtualenv if using Ubuntu.
 
@@ -129,16 +130,16 @@ name. Make sure you are using python3, such as using a virtualenv if using Ubunt
 
 To install the MonthDelta package, simply do: `pip install https://pypi.python.org/packages/source/M/MonthDelta/MonthDelta-1.0b.tar.bz2`
 
-###Attetion
+### Attetion
 make sure that this project need the dataset tool PostgreSQL
 
-###First-Time Database Setup
+### First-Time Database Setup
 Set up the database for the first time by running `python script.py initDb`
 
-##Usage
+## Usage
 In a terminal, type `nohup python script.py & ' to start the code repo analyzer and run it in the background.
 
-##OFFLine
+## OFFLine
 Update by Zuowei Chen 2024-10-28
 I have found if we once use the script.py to extract datasets, everytime it will use **git clone** to clone the project. However, the clone process may be interrupted due to the network problem and we need restart this tool again, which is very hassle and waste of time, so I have integrates a offline version of this tool, the usage can be seen below:
 ```
