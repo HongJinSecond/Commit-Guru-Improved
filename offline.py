@@ -294,11 +294,11 @@ class Git():
         
         print('-----Stats check over-----')
         sizee=len(commitList)
-        print(f"当前项目的提交数量为：{sizee}")
+        print(f"The size of the commits is {sizee}")
         print('-----Starting feature extracttion-----')
         gc.enable()
         for commit in commitList:
-            print(f"处理第{times}项,当前进度{(times/sizee)*100}%")
+            print(f"Extract for the {times} item,Current progress is {(times/sizee)*100}%")
             times+=1
             author = ""                                 # author of commit
             unixTimeStamp = 0                           # timestamp of commit
