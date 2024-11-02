@@ -1,6 +1,11 @@
 import copy
 class Commit:
+    """
+    update by Zuowei Chen 2024-10
     
+    2021113561@stu.hit.edu.cn
+
+    """
     
     def __init__(self) -> None:
         self.hash_code=''
@@ -26,7 +31,11 @@ class Commit:
         else:
             return self.file_dict
         
+    
     def update_dict(self,file_dict:dict):
+    """
+    pass the file dictionary to its child node.
+    """
         if self.copy_count==len(self.followCommit):
             file_dict.clear()
             return
@@ -36,6 +45,9 @@ class Commit:
             self.file_dict=file_dict
 
     def release_memory(self):
+        """
+        release the memory, you can execute this function whenever u want.
+        """
         self.copy_count+=1
         if self.copy_count==len(self.followCommit):
             if self.Is_branch_start:
