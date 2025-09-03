@@ -272,9 +272,7 @@ class Git():
      
         cmd = 'git log --encoding="utf-8" '
 
-        #print('"'+repr(subprocess.check_output(cmd + self.LOG_FORMAT, shell=True, cwd = repo_dir ))[14180025:14180030]+'"')
-        #print( subprocess.check_output(cmd + self.LOG_FORMAT, shell=True, cwd = repo_dir ))
-        log = str( subprocess.check_output(cmd + self.LOG_FORMAT, shell=True, cwd = repo_dir ).decode("utf8") ) # <---le using utf8 for the git log results, so that we can handle Chinese and other characters
+        log = str( subprocess.check_output(cmd + self.LOG_FORMAT, shell=True, cwd = repo_dir ).decode("utf-8",errors="replace")) # <---le using utf8 for the git log results, so that we can handle Chinese and other characters
         #log = log[2:-1]   # Remove head/end clutter
         #print(log)
 
@@ -294,11 +292,11 @@ class Git():
         
         print('-----Stats check over-----')
         sizee=len(commitList)
-        print(f"The size of the commits is {sizee}")
+        print(f"当前项目的提交数量为：{sizee}")
         print('-----Starting feature extracttion-----')
         gc.enable()
         for commit in commitList:
-            print(f"Extract for the {times} item,Current progress is {(times/sizee)*100}%")
+            print(f"处理第{times}项,当前进度{(times/sizee)*100}%")
             times+=1
             author = ""                                 # author of commit
             unixTimeStamp = 0                           # timestamp of commit
