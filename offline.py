@@ -29,6 +29,7 @@ from analyzer.notifier import *
 from config import config
 from analyzer.git_commit_linker import *
 from sqlalchemy import Date, cast 
+from ingester.git import Git as BODE
 
 """
 file: repository.py
@@ -449,9 +450,18 @@ if __name__=='__main__':
     """
     This part of the program integrates the entire content of feature extraction, and only needs to be executed to complete the offline work.
     """
+    #Process Mode: New means new method and Old means traditional Commit Guru method
+    Mode="Old"
     #Ingester
     repo_id=sys.argv[1]
-    git=Git()
+    #Get param for mode
+    if sys.argv[2]:
+        Mode=sys.argv[2]
+    if Mode=="New":
+        git=BODE()
+    else:
+        #It takes time
+        git=Git()
     commits = git.log(repo_id,False)
     commitsSession = Session()
     logging.info('Saving commits to the database...')
