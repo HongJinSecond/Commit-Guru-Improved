@@ -142,8 +142,16 @@ In a terminal, type `nohup python script.py & ' to start the code repo analyzer 
 ## OFFLine
 Update by Zuowei Chen 2024-10-28
 I have found if we once use the script.py to extract datasets, everytime it will use **git clone** to clone the project. However, the clone process may be interrupted due to the network problem and we need restart this tool again, which is very hassle and waste of time, so I have integrates a offline version of this tool, the usage can be seen below:
+
+### Base
 ```
 python script.py initDb
 python create_repositories.py {project_name} {url} #In offline version, {url} can be any string since we do not use it.
-python offline.py {project_name} #make sure that we have already clone the project to ./CASRepos/git/
+python offline.py {project_name}#make sure that we have already clone the project to ./CASRepos/git/
+```
+
+### Mode
+
+```
+python offline.py {project_name} {Mode} #Mode can be chosen from "New" and "Old". "New" is our method and "Old" is the original Commit Guru. You can not input param 'Mode' and it will run default mode "Old". 
 ```
