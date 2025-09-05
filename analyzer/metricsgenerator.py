@@ -69,7 +69,8 @@ class MetricsGenerator:
 				for col in columns:
 					commit_data.append(getattr(commit,col))
 				csv_writer.writerow(commit_data)
-
+		return dir_of_datasets + self.repo_id + ".csv"
+		
 	def fetchAllMetrics(self):
 		"""
 		fetchAllMetrics()

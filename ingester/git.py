@@ -47,7 +47,7 @@ class Git():
 
     REPO_DIRECTORY = os.path.join("CASRepos","git")        # directory in which to store repositories
 
-    def getCommitStatsProperties(stats,commitFiles, devExperience,hash_code,parents, author, unixTimeStamp ):
+    def getCommitStatsProperties(self,stats,commitFiles, devExperience,hash_code,parents, author, unixTimeStamp ):
         """
         this is the file track part  ---Zuowei Chen 2024/10/13
 

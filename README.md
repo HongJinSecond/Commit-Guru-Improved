@@ -75,5 +75,24 @@ python offline.py {project_name}#make sure that we have already clone the projec
 ### Mode
 
 ```
-python offline.py {project_name} {Mode} #Mode can be chosen from "New" and "Old". "New" is our method and "Old" is the original Commit Guru. You can not input param 'Mode' and it will run default mode "Old". 
+python offline.py {project_name} {Mode} #Mode can be chosen from "New" and "Old". "New" is our method and "Old" is the original Commit Guru (Chronological order). You can not input param 'Mode' and it will run default mode "Old". 
 ```
+
+## GUI
+This feature was added in version 2.0. This is an extension of the offline mode.
+```
+python runGUI.py
+```
+
+### GUI display
+![](pic/gui.png)
+* Project Name: The target project, make sure you have cloned it to `CASRepos/git/`.
+* Mode: `NEW` means BDFE and `Old` means simple chronological order.
+* start: If you have prepared the params above, click it and start.
+* Output path: The data will be extracted to this path.
+
+### Success
+![](pic/success.png)
+
+### Error
+![](pic/error.png)
