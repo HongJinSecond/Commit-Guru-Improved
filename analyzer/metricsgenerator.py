@@ -1,7 +1,5 @@
 """
 file: metricsgenerator.py
-author: Christoffer Rosen <cbr4830@rit.edu>
-date: Novemember, 2013
 description: Generats the metrics (medians) for each metric for the
 non-buggy and buggy commits and outputs them into the metrics table
 """

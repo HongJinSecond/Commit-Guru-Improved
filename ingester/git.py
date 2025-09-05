@@ -12,8 +12,6 @@ import gc
 import copy
 """
 file: repository.py
-authors: Ben Grawi <bjg1568@rit.edu>, Christoffer Rosen <cbr4830@rit.edu>
-date: October 2013
 description: Holds the repository git abstraction class
 """
 
