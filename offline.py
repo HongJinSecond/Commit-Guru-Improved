@@ -1390,4 +1390,20 @@ def offline_process(repo_id,Mode="New"):
     return output
 
 if __name__=="__main__":
-    offline_process("lab1","New")
+    # 获取命令行参数
+    args = sys.argv
+    if len(args) < 2:
+        print("Usage: python offline.py <project_name> [Mode]")
+        print("Mode: 'New' or 'Old' (default: 'Old')")
+        sys.exit(1)
+    
+    project_name = args[1]
+    # 如果提供了第二个参数且有效，则使用；否则默认为 "Old"
+    if len(args) >= 3 and args[2] in ("New", "Old"):
+        mode = args[2]
+    else:
+        mode = "Old"
+        if len(args) >= 3:
+            print(f"Warning: Invalid mode '{args[2]}', using default 'Old'")
+    
+    offline_process(project_name, mode)
